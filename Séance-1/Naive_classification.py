@@ -23,8 +23,8 @@ def naive_neural_network_classification(n, input_1,input_2,target_output):
         #backpropagation
         eta = 1
         grad_weight_3 = (-target_output/o2+(1-target_output)/(1-o2))*o2*(1-o2)*o1
-        grad_weight_2 = (-target_output/o2+(1-target_output)/(1-o2))*o2*(1-o2)*w3*o1*(1-o1)*input_1
-        grad_weight_1 = (-target_output/o2+(1-target_output)/(1-o2))*o2*(1-o2)*w3*o1*(1-o1)*input_2
+        grad_weight_2 = (-target_output/o2+(1-target_output)/(1-o2))*o2*(1-o2)*w3*o1*(1-o1)*input_2
+        grad_weight_1 = (-target_output/o2+(1-target_output)/(1-o2))*o2*(1-o2)*w3*o1*(1-o1)*input_1
 
         w3 = w3 - eta*grad_weight_3
         w2 = w2 - eta*grad_weight_2

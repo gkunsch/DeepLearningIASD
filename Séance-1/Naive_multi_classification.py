@@ -13,8 +13,8 @@ def naive_neural_network_classification_multi(n, input_1,input_2,target_output1,
     def sigmoid(t): 
         return 1/(1+np.exp(-t))
         
-    def binary_cross_entropy_loss(y1,o1,y2,o2): #for binary classification
-        return y1*np.log(o1)+(y2)*np.log(o2)
+    def binary_cross_entropy_loss(y1,o1,y2,o2): #for binary classification, attention pour avoir une valeur positive
+        return -y1*np.log(o1)-(y2)*np.log(o2)
     
     for i in range (n):
         n1 = input_1*w1+input_2*w2
@@ -29,10 +29,10 @@ def naive_neural_network_classification_multi(n, input_1,input_2,target_output1,
         #backpropagation
         eta = 1
 
-        grad_weight_4 = (target_output2/o3)*o3*(1-o3)*o1
-        grad_weight_3 = (target_output1/o2)*o2*(1-o2)*o1
-        grad_weight_2 = (target_output1/o2*o2*(1-o2)*w3+target_output2/o3*o3*(1-o3)*w4)*o1*(1-o1)*input_2
-        grad_weight_1 = (target_output1/o2*o2*(1-o2)*w3+target_output2/o3*o3*(1-o3)*w4)*o1*(1-o1)*input_1
+        grad_weight_4 = (-target_output2/o3)*o3*(1-o3)*o1
+        grad_weight_3 = (-target_output1/o2)*o2*(1-o2)*o1
+        grad_weight_2 = (-target_output1/o2*o2*(1-o2)*w3-target_output2/o3*o3*(1-o3)*w4)*o1*(1-o1)*input_2
+        grad_weight_1 = (-target_output1/o2*o2*(1-o2)*w3-target_output2/o3*o3*(1-o3)*w4)*o1*(1-o1)*input_1
         
         w4 = w4 - eta*grad_weight_4
         w3 = w3 - eta*grad_weight_3
