@@ -1,4 +1,4 @@
-#check if good (shouldn't work because of the implementation)
+#Check if good (shouldn't work because of the implementation)
 #Train a modified network with two outputs to have 1.0 and 0.0 as outputs with the categorical crossentropy loss.
 
 import numpy as np
@@ -39,6 +39,6 @@ def naive_neural_network_classification_multi(n, input_1,input_2,target_output1,
         w2 = w2 - eta*grad_weight_2
         w1 = w1 - eta*grad_weight_1
         
-    return [error,w1,w2,w3,w3,o2,o3]
+    return [error,w1,w2,w3,w4,o2,o3]
 
 print(naive_neural_network_classification_multi(1000, 0.1,0.5,1.0,0.0))

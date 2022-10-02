@@ -11,7 +11,7 @@ def naive_neural_network_classification(n, input_1,input_2,target_output):
         return 1/(1+np.exp(-t))
 
     def binary_cross_entropy_loss(y,o): #for binary classification
-        return y*np.log(o)+(1-y)*np.log(1-o)
+        return -y*np.log(o)-(1-y)*np.log(1-o)
     
     for i in range (n):
         n1 = input_1*w1+input_2*w2
