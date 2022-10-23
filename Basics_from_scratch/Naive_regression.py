@@ -40,4 +40,4 @@ def naive_neural_network_regression(n, input_1,input_2,target_output):
         
     return [error,w1,w2,w3,o2]
 
-print(naive_neural_network_regression(1000,0.1,0.5,0.2))
+print(naive_neural_network_regression(n=1000,input_1=0.1,input_2= 0.5,target_output=0.2))

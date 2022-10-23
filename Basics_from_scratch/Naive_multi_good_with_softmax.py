@@ -16,7 +16,7 @@ def naive_neural_network_classification_multi(steps, input_1,input_2,target_outp
         return np.exp(x)/(np.exp(x)+np.exp(y)),np.exp(y)/(np.exp(x)+np.exp(y))
         
     def cross_entropy_loss(y1,o1,y2,o2): #for multi classification, attention pour avoir une valeur positive
-        return -y1*np.log(o1)-(y2)*np.log(o2)
+        return -y1*np.log(o1)-(y2)*np.log(o2)-(1-y1)*np.log(1-o1)-(1-y2)*np.log(1-o2)
     
     for i in range (steps):
         n1 = input_1*w1+input_2*w2

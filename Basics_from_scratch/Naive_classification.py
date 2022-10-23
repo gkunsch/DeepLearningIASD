@@ -32,4 +32,4 @@ def naive_neural_network_classification(n, input_1,input_2,target_output):
         
     return [error,w1,w2,w3,o2]
 
-print(naive_neural_network_classification(1000,0.1,0.5,1.0))
+print(naive_neural_network_classification(n=1000,input_1=0.1,input_2=0.5,target_output =1.0))

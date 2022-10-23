@@ -41,4 +41,4 @@ def naive_neural_network_classification_multi(n, input_1,input_2,target_output1,
         
     return [error,w1,w2,w3,w4,o2,o3]
 
-print(naive_neural_network_classification_multi(1000, 0.1,0.5,1.0,0.0))
+print(naive_neural_network_classification_multi(n =1000, input_1 = 0.1,input_2=0.5,target_output1 = 1.0,target_output2=0.0))
